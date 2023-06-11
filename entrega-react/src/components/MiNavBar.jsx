@@ -4,21 +4,21 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 const MiNavBar = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Dolce Vita Peluquería</Navbar.Brand>
+        <Navbar.Brand href="/">Dolce Vita Peluquería</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link href="#home">Inicio</Nav.Link>
-          <Nav.Link href="#features">Productos</Nav.Link>
+          <Nav.Link href="#home"><Link to="/">Inicio</Link></Nav.Link>
           <NavDropdown title="Categorías" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Nutrición</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Alisadores
+            <NavDropdown.Item><Link to="/category/nutricion">Nutrición</Link></NavDropdown.Item>
+            <NavDropdown.Item>
+           <Link to="/category/alisadores">Alisadores</Link>
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Coloración</NavDropdown.Item>
+            <NavDropdown.Item><Link to="/category/coloracion">Coloración</Link></NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <CartWidget />
