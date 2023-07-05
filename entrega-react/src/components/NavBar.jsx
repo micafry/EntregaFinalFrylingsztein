@@ -3,10 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from './CartWidget';
+import CartWidget from './CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 
-const MiNavBar = () => {
+const NavBar = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
@@ -28,4 +28,4 @@ const MiNavBar = () => {
   )
 }
 
-export default MiNavBar
+export default NavBar

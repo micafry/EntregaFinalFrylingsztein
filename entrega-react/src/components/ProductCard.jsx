@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import CartButtons from './CartButtons';
 
 const ProductCard = ({productData}) => {
   return (
@@ -11,7 +12,9 @@ const ProductCard = ({productData}) => {
       <Card.Text>
         {productData.description}
       </Card.Text>
+      <CartButtons />
       <Link to={`/item/${productData.id}`}>Detalles</Link>
+     
     </Card.Body>
   </Card>
   )
