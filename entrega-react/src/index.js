@@ -4,6 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAHnMq0PeppPZy1_yQrsa_IT8CMr7aJcxM",
+  authDomain: "tienda-dolce-vita.firebaseapp.com",
+  projectId: "tienda-dolce-vita",
+  storageBucket: "tienda-dolce-vita.appspot.com",
+  messagingSenderId: "348970898513",
+  appId: "1:348970898513:web:7ead6c53bb940c547c1470"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
