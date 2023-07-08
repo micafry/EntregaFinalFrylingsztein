@@ -28,10 +28,9 @@ import ProductCard from '../components/ProductCard'
        }}>
          <h2>Descripción</h2>
         <p>
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-           culpa amet quae maxime quasi aperiam quisquam nobis vero numquam quod
-           expedita dolore quis quidem ipsa beatae ab qui ex veritatis.
-         </p>
+                  
+           {/* tengo que ver cómo hacer para poner la descripción de cada producto acá */}
+                     </p>
       </div>
     </div>
    )

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import ItemDetailContainer from '../components/ItemDetailContainer'
-import { ProductsData } from '../json/Products'
+//import { ProductsData } from '../json/Products'
 import { useParams } from 'react-router-dom'
 import {doc, getDoc, getFirestore} from "firebase/firestore";
 

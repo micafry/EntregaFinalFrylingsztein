@@ -11,6 +11,8 @@ const ProductCard = ({ productData }) => {
         <Card.Title>{productData.title}</Card.Title>
         <Card.Text>
           {productData.description}
+          <div>${productData.price}</div>
+         
         </Card.Text>
         <CartButtons />
         <Link to={`/item/${productData.id}`}>Detalles</Link>

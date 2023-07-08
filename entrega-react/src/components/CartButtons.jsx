@@ -2,60 +2,73 @@ import React, { useContext, useState } from 'react'
 import { Button } from "react-bootstrap";
 import { CartContext } from '../context/CartContext';
 
-const CartButtons = () => {
+const CartButtons = (customStyle, productId) => {
 
-    const [count, setCount] = useContext(CartContext);
+ 
     const [state, setState] = useState(0);
+    const {count, setCount} = useContext(CartContext);
 
     const addItem = () => {
-        setCount(count + 1);
         setState(state + 1);
 
     }
     const removeItem = () => {
-        setCount(count - 1);
         setState(state - 1);
     }
+
+    const addToCart = () => {
+        const existingProduct = count.products.find(
+            (p) => p.productId === productId
+        );
+        if (existingProduct) {
+            existingProduct.qty += state;
+        } else {
+            const newProduct = {
+                productId,
+                qty: state,
+            };
+            setCount((prevState) => ({
+                qtyItems: prevState.qtyItems + state,
+                products: [...prevState.products, newProduct],
+            }))
+        }
+    }
+
+
     return (
 
-        <div className="d-flex align-items-center">
-
-            <div className="d-flex w-25 flex-column">
-
-                <Button variant="outline-secondary" className="rounded-0" onClick={removeItem}>
-
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+            }}
+        >
+            <div style={{ margin: "10px" }}>
+                <Button
+                    variant="outline-secondary"
+                    className="rounded-0"
+                    onClick={removeItem}
+                >
                     -
-
                 </Button>
-<span>{state}</span>
-                {/*
-                <input
-
-                    type="text"
-
-                    className="form-control form-control-sm text-center rounded-0"
-
-                    placeholder="0"
-
-                    id="valueInput"
-
-                />
-    */}
-
-                <Button variant="outline-secondary" className="rounded-0" onClick={addItem}>
-
+                <span style={{ margin: "10px", fontSize: "18px" }}>{state}</span>
+                <Button
+                    variant="outline-secondary"
+                    className="rounded-0"
+                    onClick={addItem}
+                >
                     +
-
                 </Button>
-
             </div>
-
-            <Button className="ml-2" variant="primary">
-
+            <Button
+                className="ml-2"
+                variant={customStyle.backgroundColor}
+                onClick={addToCart}
+            >
                 Agregar al Carrito
-
             </Button>
-
         </div>
 
     );
